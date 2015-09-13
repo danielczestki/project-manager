@@ -16,12 +16,6 @@ define('APP_PATH', "");
 define('PROJECT_PATH', "");
 define('PROJECT_TYPE', 'dev');
 
-
-$config = register::registry("config");
-$config->load(PROJECT_TYPE);
-
-$db = new mainModel($config->get("db"));
-
 function __autoload($classname)
 {
     if(file_exists($classname.".php"))

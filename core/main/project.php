@@ -18,7 +18,7 @@ class project
 
     public function userProjects($user)
     {
-    	echo "Klasa". __CLASS__. "<br>";
+    	//echo "Klasa". __CLASS__. "<br>";
     	if(file_exists('app/projects/'.$user))
     	{
     		var_dump($user);

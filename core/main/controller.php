@@ -11,6 +11,7 @@
 class controller
 {
 
+
     public function loadController($controller, $action = 'index', $is_dir)
     {
         if($is_dir === false)
@@ -56,15 +57,30 @@ class controller
         return true;
     }
 
-    public function __set($name, $value)
+    public function loadModel($model)
     {
-        $this->$value = $name;
+
+        $modelInstance = register::registry('model');
+        $model = $modelInstance->loadModel($model);
+
+        if($modelInstance == null or $modelInstance == false)
+        {
+            return false;
+        }
+
+        return $model;
     }
 
-    public function __get($name)
-    {
-        return $this->$name;
-    }
+
+//    public function __set($name, $value)
+//    {
+//        $this->$value = $name;
+//    }
+//
+//    public function __get($name)
+//    {
+//        return $this->$name;
+//    }
 
 
 
