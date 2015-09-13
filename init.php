@@ -5,17 +5,14 @@
  * Date: 24.06.15
  * Time: 19:30
  */
-use ProjectManager\Main\Config\Config;
-// use PM\Model\MainDB\DB;
+
 
 define('APP_PATH', "");
 define('PROJECT_PATH', "");
 define('PROJECT_TYPE', 'dev');
 
 
-require_once "core/main/config.php";
-
-$config = new Config;
+$config = register::registry("config");
 $config->load(PROJECT_TYPE);
 
 $db = new mainModel($config->get("db"));

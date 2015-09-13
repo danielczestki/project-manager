@@ -1,8 +1,6 @@
-<?php 
-namespace ProjectManager\Main\Config;
+<?php
 
-
-class Config
+class config
 {
 
 	protected $data;

@@ -91,9 +91,5 @@ class Router
         $controller->loadController($this->controller, $this->action, $this->isDir);
 
     }
-    //todo
-    // 1. rozkodowywanie adresu url
-    // 2.
-
 
 }
