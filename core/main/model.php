@@ -6,6 +6,8 @@
  * Date: 24.06.15
  * Time: 19:32
  */
+namespace PM\Core\Main;
+
 class model
 {
 

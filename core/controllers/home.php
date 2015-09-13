@@ -5,6 +5,8 @@
  * Date: 19.07.2015
  * Time: 00:12
  */
+namespace PM\Core\Controller;
+
 
 class home extends controller
 {

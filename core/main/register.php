@@ -6,6 +6,8 @@
  * Date: 18.07.2015
  * Time: 22:18
  */
+namespace PM\Core\Main;
+
 class register
 {
     static private $registered = array();

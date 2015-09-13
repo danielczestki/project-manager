@@ -6,6 +6,8 @@
  * Date: 24.06.15
  * Time: 19:31
  */
+namespace PM\Core\Main;
+
 class Router
 {
     private $url;

@@ -1,6 +1,6 @@
 <?php 
 
-// namespace PM\Model\MainDB;
+ namespace PM\Models;
 class mainModel{
 
 	public $args = [
