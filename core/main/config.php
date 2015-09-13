@@ -1,5 +1,5 @@
 <?php
-namespace PM\Core\Main;
+//namespace PM\Core\Main;
 
 class config
 {

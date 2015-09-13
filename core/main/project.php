@@ -6,7 +6,7 @@
  * Date: 20.07.2015
  * Time: 10:41
  */
-namespace PM\Core\Main;
+//namespace PM\Core\Main;
 
 class project
 {

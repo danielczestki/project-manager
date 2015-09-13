@@ -1,6 +1,6 @@
 <?php 
 
- namespace PM\Models;
+//namespace PM\Core\Models;
 class mainModel{
 
 	public $args = [
@@ -20,7 +20,8 @@ class mainModel{
 		$this->db_name = $config['db_name'];
 	}
 
-	public function connect(){
+	public function connect()
+	{
 
 	}
 }
