@@ -5,9 +5,20 @@
  * Date: 24.06.15
  * Time: 19:30
  */
+use ProjectManager\Main\Config\Config;
+// use PM\Model\MainDB\DB;
+
 define('APP_PATH', "");
 define('PROJECT_PATH', "");
+define('PROJECT_TYPE', 'dev');
 
+
+require_once "core/main/config.php";
+
+$config = new Config;
+$config->load(PROJECT_TYPE);
+
+$db = new mainModel($config->get("db"));
 
 function __autoload($classname)
 {
@@ -35,4 +46,11 @@ function __autoload($classname)
     {
         require_once "core/main/".$classname.".php";
     }
+    elseif(file_exists("core/models/".$classname.".php"))
+    {
+        require_once "core/models/".$classname.".php";
+    }
+
 }
+
+

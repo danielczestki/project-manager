@@ -9,15 +9,18 @@
 class project
 {
 
-    public function loadProject($name, $user)
+    public function loadProject($name = false, $user = false)
     {
-        if(file_exists())
-        {
-
-        }
-
-
+        $this->userProjects('project1');
     }
 
+    public function userProjects($user)
+    {
+    	echo "Klasa". __CLASS__. "<br>";
+    	if(file_exists('app/projects/'.$user))
+    	{
+    		var_dump($user);
+    	}
+    }
 
 }

@@ -11,6 +11,7 @@ class Router
     private $url;
     private $controller;
     private $action;
+    private $isDir;
     private $params = array();
 
     public function __construct()
@@ -28,33 +29,66 @@ class Router
             var_dump($urlExploded);
         echo"</pre>";
 
-        $this->controller = $urlExploded[0];
-        if($urlExploded[1] == "")
+        if(!is_dir("core/controllers/".$urlExploded[0]))
         {
-            $urlExploded[1] = "index";
+
+            $this->controller = $urlExploded[0];
+            if($urlExploded[1] == "")
+            {
+                $urlExploded[1] = "index";
+            }
+            $this->action = $urlExploded[1];
+
+            array_shift($urlExploded);
+            array_shift($urlExploded);
+
+            if(count($urlExploded != 0))
+            {
+                $this->params = $urlExploded;
+            }
+
+            $this->isDir = false;
         }
-        $this->action = $urlExploded[1];
+        else
+        {   
+            
+            if(!isset($urlExploded[1]) or ($urlExploded[1] == ""))
+            {
+                $urlExploded[1] = "home";
+            }
 
-        array_shift($urlExploded);
-        array_shift($urlExploded);
+            $this->controller = $urlExploded[1];
 
-        if(count($urlExploded != 0))
-        {
-            $this->params = $urlExploded;
+            if(!isset($urlExploded[2]) or ($urlExploded[2] == ""))
+            {
+                $urlExploded[2] = "index";
+            }
+            $this->action = $urlExploded[2];
+            $this->isDir = $urlExploded[0];
+
+            array_shift($urlExploded);
+            array_shift($urlExploded);
+
+            if(count($urlExploded != 0))
+            {
+                $this->params = $urlExploded;
+            }
+
         }
 
+        
     }
 
     public function getController()
-    {
+    {   
+
         return $this->controller;
     }
 
     public function dispatch()
-    {
-
+    {   
         $controller = register::registry("controller");
-        $controller->loadController($this->controller, $this->action);
+        $controller->loadController($this->controller, $this->action, $this->isDir);
 
     }
     //todo

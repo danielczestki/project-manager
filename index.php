@@ -13,9 +13,9 @@ $router = new Router;
 $router->dispatch();
 
 
-echo "<pre>";
-    var_dump($_SERVER);
-echo "</pre>";
+// echo "<pre>";
+//     var_dump($_SERVER);
+// echo "</pre>";
 
 /*
  * todo
